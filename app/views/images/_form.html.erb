@@ -1,0 +1,17 @@
+<div class='container'> 
+  <%= form_for @image do |form| %>
+    <%= form.label :description %>
+    <%= form.text_field :description, class:'form-control' %><br>
+
+    <%= form.label :picture %><br>
+    <%= form.file_field :picture %>
+    <br>
+    <%= form.submit 'Enviar', class: 'btn btn-primary' %>
+  <% end %>
+  <% if @image.errors.any?%> 
+    <div class="alert alert-danger" role="alert" > 
+      Escribe una descripcion valida
+      <%= @image.errors.messages %> 
+    </div>
+  <% end %>
+</div>

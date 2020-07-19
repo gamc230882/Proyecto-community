@@ -1,0 +1,30 @@
+<% if user_signed_in? %>
+  <div class="row">
+    <div class="col-4">
+
+    </div>
+    <div class="col-8">
+      <h1><%= current_user.email %></h1>
+      <div>
+        <ul class="nav">
+          <li class="margin-right">
+            <p><strong><%= @images.count %></strong> Publicaciones</p>
+          </li>
+          <li class="margin-right">
+            <p><strong>200</strong> Seguidores</p>
+          </li>
+          <li class="margin-right">
+            <p><strong>250</strong> Seguidos</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <%= render @images %>
+  </div>
+  <%= will_paginate @images %>
+<% else %>
+  <h1>App Community </h1>
+  <p>Puedes iniciar sesión en el enlace :)</p>
+<% end %> 

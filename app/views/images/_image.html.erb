@@ -1,0 +1,15 @@
+<div class='col-3'>
+  <figure class='figure'>
+    <%= image_tag image.picture.thumb.url, class:"figure-img img-fluid rounded" %>
+      <!--<img src="http://getuikit.com/v2/docs/images/placeholder_600x400.svg" 
+      class="img-fluid" alt="image"><br> -->
+    
+  <figcaption class="figure-caption text-left"><%= image.description %><br>
+    <%= link_to t('.edit_link'), edit_image_path(image) %>
+    <%= link_to t('.remove_link'), image, method: :delete, data: {confirm: 'sure?'} %>
+    </figcaption>
+  </figure>
+</div>
+
+
+​
